@@ -4,6 +4,12 @@ I wanted to learn next js and Netlify and properly get to grips with Typescript.
 
 The project is a simple Pomodoro Style Timer, a technique I use lots when studying but I haven't found an existing timer that fully satisfied my tastes. Hopefully I can make one :P
 
+## Styling
+
+Really liked the colors used by Monokai Pro, but found I preferred One Dark Pro Darker over it (reminds me of Atom which is nostalgic). 
+
+Monokai Pro will serve as the inspiration for the Apps colors. 
+
 
 # Boilerplate from Next JS:
 
