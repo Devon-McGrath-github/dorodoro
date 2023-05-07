@@ -1,37 +1,88 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, {useState, useEffect, useRef} from 'react'
 
-// set intiial time
-const INITIAL_TIME: number = 180
+const STATUS = {
+  STARTED: 'Started',
+  STOPPED: 'Stopped',
+}
 
-export default function CountdownTimer() {
-  // useState to set time remaining
-  const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_TIME)
-  
+const INITIAL_COUNT = 1500
+
+export default function CountdownApp() {
+  const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT)
+  const [status, setStatus] = useState(STATUS.STOPPED)
+
   const secondsToDisplay = secondsRemaining % 60
-  const minutesToDisplay = ( secondsRemaining - secondsToDisplay ) / 60
-  
+  const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60
+  const minutesToDisplay = minutesRemaining % 60
 
-  // requires use effect,
-
-  useEffect(() => {
-
-    // add if statement so timer stops at 0 
-    const interval = setInterval(() => {
-      setSecondsRemaining(secondsRemaining => secondsRemaining - 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-
-  // return seconds left as an element on the page
-
+  const handleStart = () => {
+    setStatus(STATUS.STARTED)
+  }
+  const handleStop = () => {
+    setStatus(STATUS.STOPPED)
+  }
+  const handleReset = () => {
+    setStatus(STATUS.STOPPED)
+    setSecondsRemaining(INITIAL_COUNT)
+  }
+  useInterval(
+    () => {
+      if (secondsRemaining > 0) {
+        setSecondsRemaining(secondsRemaining - 1)
+      } else {
+        setStatus(STATUS.STOPPED)
+      }
+    },
+    status === STATUS.STARTED ? 1000 : null,
+    // passing null stops the interval
+  )
   return (
-    <p>
-      {/* need to add function to display 2 digits (clock format) */}
-      timer: {twoDigits(minutesToDisplay)} : {twoDigits(secondsToDisplay)}
-    </p>
+    <div className="App">
+
+      <div>
+        {twoDigits(minutesToDisplay)}:
+        {twoDigits(secondsToDisplay)}
+      </div>
+
+      <button onClick={handleStart} type="button">
+        Start
+      </button>
+
+      <button onClick={handleStop} type="button">
+        Stop
+      </button>
+
+      <button onClick={handleReset} type="button">
+        Reset
+      </button>
+
+
+      <div>Status: {status}</div>
+    </div>
   )
 }
 
-const twoDigits = (num) => String(num).padStart(2, '0')
+// source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+function useInterval(callback: number | string, delay: number | null) {
+  const savedCallback: object = useRef()
+
+  console.log('useRef() returns: ' + savedCallback)
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback
+  }, [callback])
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current()
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay)
+      return () => clearInterval(id)
+    }
+  }, [delay])
+}
+
+const twoDigits = (num: number) => String(num).padStart(2, '0')
