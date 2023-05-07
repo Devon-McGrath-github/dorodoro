@@ -63,10 +63,8 @@ export default function CountdownApp() {
 }
 
 // source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-function useInterval(callback: number | string, delay: number | null) {
-  const savedCallback: object = useRef()
-
-  console.log('useRef() returns: ' + savedCallback)
+function useInterval(callback: any, delay: number | null) {
+  const savedCallback = useRef()
 
   // Remember the latest callback.
   useEffect(() => {
