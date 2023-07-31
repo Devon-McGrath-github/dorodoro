@@ -6,12 +6,11 @@ The project is a simple Pomodoro Style Timer, a technique I use lots when studyi
 
 ## Styling
 
-Really liked the colors used by Monokai Pro, but found I preferred One Dark Pro Darker over it (reminds me of Atom which is nostalgic). 
+Really liked the colors used by Monokai Pro, but found I preferred One Dark Pro Darker over it (reminds me of Atom which is nostalgic).
 
-Monokai Pro will serve as the inspiration for the Apps colors. 
+Monokai Pro will serve as the inspiration for the Apps colors.
 
-
-# Boilerplate from Next JS:
+## Boilerplate from Next JS
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
