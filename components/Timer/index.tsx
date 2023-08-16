@@ -30,13 +30,15 @@ export default function CountdownApp() {
     // passing null stops the interval
   );
   return (
-    <div className="App">
-      <div>
-        {twoDigits(minutesToDisplay)}:{twoDigits(secondsToDisplay)}
+    <div className="grid grid-cols-2 grid-rows-2 gap-3">
+      <div className="col-span-2">
+        <h1 className="text-6xl text-center">
+          {twoDigits(minutesToDisplay)}:{twoDigits(secondsToDisplay)}
+        </h1>
       </div>
 
       <button
-        className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+        className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
         onClick={handleClick}
         type="button"
       >
@@ -44,7 +46,7 @@ export default function CountdownApp() {
       </button>
 
       <button
-        className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+        className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
         onClick={handleReset}
         type="button"
       >
