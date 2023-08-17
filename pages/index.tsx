@@ -1,5 +1,6 @@
 import NavBar from '@/components/NavBar/NavBar';
 import Timer from '@/components/Timer';
+import Layout from '@/layouts';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -19,22 +20,23 @@ export default function Home() {
   }, [count]);
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div>
-        <p>{count}</p>
-        <Head>
-          <title> {count} </title>
-          <meta property="og:title" content="My page title" key="title" />
-        </Head>
+    <Layout>
+      <main
+        className={`flex flex-col items-center justify-between p-24 ${inter.className}`}
+      >
+        <div>
+          <p className="mb-2">{count}</p>
 
-        <NavBar />
+          <Head>
+            <title> {count} </title>
+            <meta property="og:title" content="My page title" key="title" />
+          </Head>
 
-        <Timer duration={1500} />
-        <Timer duration={900} />
-        <Timer duration={300} />
-      </div>
-    </main>
+          <Timer duration={1500} />
+          <Timer duration={900} />
+          <Timer duration={300} />
+        </div>
+      </main>
+    </Layout>
   );
 }
