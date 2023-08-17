@@ -1,4 +1,5 @@
 import NavBar from '@/components/NavBar/NavBar';
+import Tabs from '@/components/Tabs/Tabs';
 import Timer from '@/components/Timer';
 import Layout from '@/layouts';
 import { Inter } from 'next/font/google';
@@ -31,6 +32,8 @@ export default function Home() {
             <title> {count} </title>
             <meta property="og:title" content="My page title" key="title" />
           </Head>
+
+          <Tabs />
 
           <Timer duration={1500} />
           <Timer duration={900} />
