@@ -12,6 +12,8 @@ export default function Home() {
       <div>
         <NavBar />
         <Timer duration={1500} />
+        <Timer duration={900} />
+        <Timer duration={300} />
       </div>
     </main>
   );
