@@ -18,6 +18,7 @@ export default function CountdownApp() {
     setCountingDown(false);
     setSecondsRemaining(INITIAL_COUNT);
   };
+
   useInterval(
     () => {
       if (secondsRemaining > 0) {
@@ -56,9 +57,10 @@ export default function CountdownApp() {
   );
 }
 
+// custom hook from dan abramov
 // source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-function useInterval(callback: any, delay: number | null) {
-  const savedCallback = useRef();
+function useInterval(callback: () => void, delay: number | null) {
+  const savedCallback = useRef<(() => void) | null>(null);
 
   // Remember the latest callback.
   useEffect(() => {
@@ -68,8 +70,11 @@ function useInterval(callback: any, delay: number | null) {
   // Set up the interval.
   useEffect(() => {
     function tick() {
-      savedCallback.current();
+      if (savedCallback.current !== null) {
+        savedCallback.current();
+      }
     }
+
     if (delay !== null) {
       let id = setInterval(tick, delay);
       return () => clearInterval(id);
