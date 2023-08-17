@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const INITIAL_COUNT = 1500;
+export interface TimerProps {
+  duration: number;
+}
 
-export default function CountdownApp() {
-  const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT);
+export default function CountdownApp({ duration }: TimerProps) {
+  const [secondsRemaining, setSecondsRemaining] = useState(duration);
   const [countingDown, setCountingDown] = useState(false);
 
   const secondsToDisplay = secondsRemaining % 60;
@@ -16,7 +18,7 @@ export default function CountdownApp() {
 
   const handleReset = () => {
     setCountingDown(false);
-    setSecondsRemaining(INITIAL_COUNT);
+    setSecondsRemaining(duration);
   };
 
   useInterval(
