@@ -34,10 +34,6 @@ export default function Home() {
           </Head>
 
           <Tabs />
-
-          <Timer duration={1500} />
-          <Timer duration={900} />
-          <Timer duration={300} />
         </div>
       </main>
     </Layout>

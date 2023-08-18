@@ -1,53 +1,94 @@
-import { WithRouterProps } from 'next/dist/client/with-router';
-import Link from 'next/link';
-import { withRouter, NextRouter } from 'next/router';
+import { useState } from 'react';
+import Timer from '../Timer/index';
 
-interface withRouterProps {
-  router: NextRouter;
-}
-
-const Tabs = ({ router }: WithRouterProps) => {
-  const {
-    query: { tab },
-  } = router;
-
-  // split Links into "Tab" components, pass durations?
-  const isTabOne = tab === '1' || tab === null;
-  const isTabTwo = tab === '2';
+const Tabs = () => {
+  const [openTab, setOpenTab] = useState(1);
 
   return (
     <>
-      <div className="mb-3 flex gap-3">
-        <Link
-          selected={isTabOne}
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-          href={{ pathname: '/', query: { tab: '1' } }}
-        >
-          Tab 1
-        </Link>
-
-        <Link
-          selected={isTabTwo}
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-          href={{ pathname: '/', query: { tab: '2' } }}
-        >
-          Tab 2
-        </Link>
-
-        {/* <Link
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-          href={{ pathname: '/', query: { tab: '3' } }}
-        >
-          Tab 3
-        </Link> */}
-      </div>
-
-      <div>
-        {isTabOne && <>This is tab one content</>}
-        {isTabTwo && <>This is tab two content</>}
+      <div className="flex flex-wrap">
+        <div className="w-full">
+          <ul
+            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            role="tablist"
+          >
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  (openTab === 1
+                    ? 'text-white bg-blueGray-600'
+                    : 'text-blueGray-600 bg-white')
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(1);
+                }}
+                data-toggle="tab"
+                href="#link1"
+                role="tablist"
+              >
+                Productive
+              </a>
+            </li>
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  (openTab === 2
+                    ? 'text-white bg-blueGray-600'
+                    : 'text-blueGray-600 bg-white')
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(2);
+                }}
+                data-toggle="tab"
+                href="#link2"
+                role="tablist"
+              >
+                Short Break
+              </a>
+            </li>
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
+                  (openTab === 3
+                    ? 'text-white bg-blueGray-600'
+                    : 'text-blueGray-600 bg-white')
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(3);
+                }}
+                data-toggle="tab"
+                href="#link3"
+                role="tablist"
+              >
+                Long Break
+              </a>
+            </li>
+          </ul>
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+            <div className="px-4 py-5 flex-auto">
+              <div className="tab-content tab-space">
+                <div className={openTab === 1 ? 'block' : 'hidden'} id="link1">
+                  <Timer duration={1500} />
+                </div>
+                <div className={openTab === 2 ? 'block' : 'hidden'} id="link2">
+                  <Timer duration={900} />
+                </div>
+                <div className={openTab === 3 ? 'block' : 'hidden'} id="link3">
+                  <Timer duration={300} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
 };
 
-export default withRouter(Tabs);
+export default Tabs;
