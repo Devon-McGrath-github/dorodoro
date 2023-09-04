@@ -7,7 +7,7 @@ interface State {
 
 interface Actions {
 	decrease: (by: number) => void
-	// reset: () => void
+	reset: (duration: number) => void
 }
 
 // define the initial state
@@ -21,5 +21,9 @@ export const useStore = create<State & Actions>()((set, get) => ({
 
 	decrease: (by: number) => {
 		set({ timer: get().timer - by })
+	},
+
+	reset: (duration: number) => {
+		set({ timer: (get().timer = duration) })
 	},
 }))

@@ -7,7 +7,11 @@ export interface TimerProps {
 }
 
 export default function CountdownApp({ duration }: TimerProps) {
-	const [timer, updatetimer] = useStore((state) => [state.timer, state.decrease])
+	const [timer, updatetimer, reset] = useStore((state) => [
+		state.timer,
+		state.decrease,
+		state.reset,
+	])
 	const [countingDown, setCountingDown] = useState(false)
 
 	const secondsToDisplay = timer % 60
@@ -20,7 +24,7 @@ export default function CountdownApp({ duration }: TimerProps) {
 
 	const handleReset = () => {
 		setCountingDown(false)
-		// settimer(duration)
+		reset(duration)
 	}
 
 	useInterval(
