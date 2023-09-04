@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { useInterval } from '@/hooks/useInterval'
+import { useStore } from '@/store/Timer'
 
 export interface TimerProps {
 	duration: number
 }
 
 export default function CountdownApp({ duration }: TimerProps) {
-	const [secondsRemaining, setSecondsRemaining] = useState(duration)
+	const [timer, updatetimer] = useStore((state) => [state.timer, state.decrease])
 	const [countingDown, setCountingDown] = useState(false)
 
-	const secondsToDisplay = secondsRemaining % 60
-	const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60
+	const secondsToDisplay = timer % 60
+	const minutesRemaining = (timer - secondsToDisplay) / 60
 	const minutesToDisplay = minutesRemaining % 60
 
 	const handleClick = () => {
@@ -19,13 +20,13 @@ export default function CountdownApp({ duration }: TimerProps) {
 
 	const handleReset = () => {
 		setCountingDown(false)
-		setSecondsRemaining(duration)
+		// settimer(duration)
 	}
 
 	useInterval(
 		() => {
-			if (secondsRemaining > 0) {
-				setSecondsRemaining(secondsRemaining - 1)
+			if (timer > 0) {
+				updatetimer(1)
 			} else {
 				setCountingDown(false)
 			}

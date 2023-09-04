@@ -9,14 +9,14 @@ import { useEffect, useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-	const timerDuration = useStore((state) => state.timerDuration)
+	const timer = useStore((state) => state.timer)
 
 	return (
 		<Layout>
 			<main className={`flex flex-col items-center justify-between p-24 ${inter.className}`}>
 				<div>
 					<Head>
-						<title> {timerDuration} </title>
+						<title> {timer} </title>
 						<meta property='og:title' content='My page title' key='title' />
 					</Head>
 
