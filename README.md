@@ -1,6 +1,6 @@
 # DoroDoro Timer
 
-I wanted to learn next js, Tailwind, Netlify and improve at Typescript. This is what I'm using to achieve those goals.  
+I wanted to learn next js, Tailwind, Netlify and improve at Typescript. This is what I'm using to achieve those goals.
 
 The project is a simple Pomodoro Style Timer, a technique I use lots when studying but I haven't found an existing timer that fully satisfied my tastes. Hopefully I can make one :P
 
