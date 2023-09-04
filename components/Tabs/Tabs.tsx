@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Timer from '../Timer/index';
+import { useState } from 'react'
+import Timer from '../Timer/index'
 
 const Tabs = () => {
-  const [openTab, setOpenTab] = useState(1);
+  const [openTab, setOpenTab] = useState(1)
 
   return (
     <>
@@ -21,8 +21,8 @@ const Tabs = () => {
                     : 'text-blueGray-600 bg-white')
                 }
                 onClick={(e) => {
-                  e.preventDefault();
-                  setOpenTab(1);
+                  e.preventDefault()
+                  setOpenTab(1)
                 }}
                 data-toggle="tab"
                 href="#link1"
@@ -40,8 +40,8 @@ const Tabs = () => {
                     : 'text-blueGray-600 bg-white')
                 }
                 onClick={(e) => {
-                  e.preventDefault();
-                  setOpenTab(2);
+                  e.preventDefault()
+                  setOpenTab(2)
                 }}
                 data-toggle="tab"
                 href="#link2"
@@ -59,8 +59,8 @@ const Tabs = () => {
                     : 'text-blueGray-600 bg-white')
                 }
                 onClick={(e) => {
-                  e.preventDefault();
-                  setOpenTab(3);
+                  e.preventDefault()
+                  setOpenTab(3)
                 }}
                 data-toggle="tab"
                 href="#link3"
@@ -88,7 +88,7 @@ const Tabs = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs
