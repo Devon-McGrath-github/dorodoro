@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import Timer from '../Timer/Timer'
+import { useStore } from '@/store/Timer'
 
 const Tabs = () => {
 	const [openTab, setOpenTab] = useState(1)
+
+	const [updateTimer] = useStore((s) => [s.updateTimer])
 
 	return (
 		<>
@@ -18,6 +21,7 @@ const Tabs = () => {
 								onClick={(e) => {
 									e.preventDefault()
 									setOpenTab(1)
+									updateTimer('default')
 								}}
 								data-toggle='tab'
 								href='#link1'
@@ -35,6 +39,7 @@ const Tabs = () => {
 								onClick={(e) => {
 									e.preventDefault()
 									setOpenTab(2)
+									updateTimer('shortBreak')
 								}}
 								data-toggle='tab'
 								href='#link2'
@@ -52,6 +57,7 @@ const Tabs = () => {
 								onClick={(e) => {
 									e.preventDefault()
 									setOpenTab(3)
+									updateTimer('longBreak')
 								}}
 								data-toggle='tab'
 								href='#link3'
