@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 // define types for state values and actions separately
 interface State {
-	timer: number
+	time: number
 }
 
 interface Actions {
@@ -12,18 +12,20 @@ interface Actions {
 
 // define the initial state
 const initialState: State = {
-	timer: 1500,
+	time: 1500,
 }
 
 // create store
 export const useStore = create<State & Actions>()((set, get) => ({
 	...initialState,
 
+  
+
 	decrease: (by: number) => {
-		set({ timer: get().timer - by })
+		set({ time: get().time - by })
 	},
 
 	reset: (duration: number) => {
-		set({ timer: (get().timer = duration) })
+		set({ time: (get().time = duration) })
 	},
 }))

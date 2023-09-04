@@ -7,16 +7,14 @@ export interface TimerProps {
 }
 
 export default function CountdownApp({ duration }: TimerProps) {
-	const [timer, updatetimer, reset] = useStore((state) => [
-		state.timer,
-		state.decrease,
-		state.reset,
-	])
+	const [time, decrease, reset] = useStore((state) => [state.time, state.decrease, state.reset])
 	const [countingDown, setCountingDown] = useState(false)
 
-	const secondsToDisplay = timer % 60
-	const minutesRemaining = (timer - secondsToDisplay) / 60
+	const secondsToDisplay = time % 60
+	const minutesRemaining = (time - secondsToDisplay) / 60
 	const minutesToDisplay = minutesRemaining % 60
+
+	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
 	const handleClick = () => {
 		setCountingDown(!countingDown)
@@ -29,8 +27,8 @@ export default function CountdownApp({ duration }: TimerProps) {
 
 	useInterval(
 		() => {
-			if (timer > 0) {
-				updatetimer(1)
+			if (time > 0) {
+				decrease(1)
 			} else {
 				setCountingDown(false)
 			}
@@ -65,5 +63,3 @@ export default function CountdownApp({ duration }: TimerProps) {
 		</div>
 	)
 }
-
-const twoDigits = (num: number) => String(num).padStart(2, '0')

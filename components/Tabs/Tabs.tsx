@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Timer from '../Timer/index'
+import Timer from '../Timer/Timer'
 
 const Tabs = () => {
 	const [openTab, setOpenTab] = useState(1)
