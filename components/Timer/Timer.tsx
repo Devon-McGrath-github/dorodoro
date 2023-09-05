@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useInterval } from '@/hooks/useInterval'
 import { useStore } from '@/store/Timer'
 
 export default function CountdownApp() {
-	const [time, timer, decrease, reset] = useStore((state) => [
-		state.time,
-		state.timer,
-		state.decrease,
-		state.reset,
-	])
-	const [countingDown, setCountingDown] = useState(false)
+	const [time, countingDown, toggleCountDown, decrease, reset] = useStore(
+		(state) => [
+			state.time,
+			state.countingDown,
+			state.toggleCountDown,
+			state.decrease,
+			state.reset,
+		]
+	)
 
 	const secondsToDisplay = time % 60
 	const minutesRemaining = (time - secondsToDisplay) / 60
@@ -18,11 +20,10 @@ export default function CountdownApp() {
 	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
 	const handleClick = () => {
-		setCountingDown(!countingDown)
+		toggleCountDown(!countingDown)
 	}
 
 	const handleReset = () => {
-		setCountingDown(false)
 		reset()
 	}
 
@@ -31,7 +32,7 @@ export default function CountdownApp() {
 			if (time > 0) {
 				decrease(1)
 			} else {
-				setCountingDown(false)
+				toggleCountDown(false)
 			}
 		},
 		countingDown ? 1000 : null

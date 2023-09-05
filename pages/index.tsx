@@ -16,7 +16,9 @@ export default function Home() {
 
 	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
-	const formattedTimer = `${twoDigits(minutesToDisplay)}:${twoDigits(secondsToDisplay)}`
+	const formattedTimer = `${twoDigits(minutesToDisplay)}:${twoDigits(
+		secondsToDisplay
+	)}`
 
 	return (
 		<Layout>
@@ -25,7 +27,9 @@ export default function Home() {
 				<meta property='og:title' content='DoroDoro' />
 			</Head>
 
-			<main className={`flex flex-col items-center justify-between p-24 ${inter.className}`}>
+			<main
+				className={`flex flex-col items-center justify-between p-24 ${inter.className}`}
+			>
 				<Tabs />
 			</main>
 		</Layout>
