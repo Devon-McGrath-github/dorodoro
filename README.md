@@ -1,14 +1,8 @@
 # DoroDoro Timer
 
-I wanted to learn next js, Tailwind, Netlify and improve at Typescript. This is what I'm using to achieve those goals.
+I wanted to learn next js, Tailwind, Zustand, Netlify and improve at Typescript. This is what I'm using to achieve those goals.
 
-The project is a simple Pomodoro Style Timer, a technique I use lots when studying but I haven't found an existing timer that fully satisfied my tastes. Hopefully I can make one :P
-
-## Styling
-
-Really liked the colors used by Monokai Pro, but found I preferred One Dark Pro Darker over it (reminds me of Atom which is nostalgic).
-
-Monokai Pro will serve as the inspiration for the Apps colors.
+The project is a simple Pomodoro Technique Timer, a focus/study technique I use frequently.
 
 ## Boilerplate from Next JS
 
