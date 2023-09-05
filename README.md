@@ -1,8 +1,8 @@
 # DoroDoro Timer
 
-I wanted to learn next js, Tailwind, Zustand, Netlify and improve at Typescript. This is what I'm using to achieve those goals.
+Project is a simple Pomodoro Technique Timer, a focus/study technique I use frequently.
 
-The project is a simple Pomodoro Technique Timer, a focus/study technique I use frequently.
+I wanted to practice Typescript, learn Next.js, Tailwind, Zustand and learn how to deploy a repo with Netlify. This is what I'm using to achieve those goals.
 
 ## Boilerplate from Next JS
 
