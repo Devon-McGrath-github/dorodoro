@@ -9,7 +9,7 @@ interface State {
 interface Actions {
 	updateTimer: (to: string) => void
 	decrease: (by: number) => void
-	reset: (duration: number) => void
+	reset: () => void
 }
 
 // define the initial state
@@ -31,7 +31,18 @@ export const useStore = create<State & Actions>()((set, get) => ({
 		set({ time: get().time - by })
 	},
 
-	reset: (duration: number) => {
-		set({ time: (get().time = duration) })
+	reset: () => {
+		console.log(get().timer)
+		switch (get().timer) {
+			case 'shortBreak':
+				set({ time: (get().time = 300) })
+				break
+			case 'longBreak':
+				set({ time: (get().time = 900) })
+				break
+			default:
+				set({ time: (get().time = 1500) })
+				break
+		}
 	},
 }))

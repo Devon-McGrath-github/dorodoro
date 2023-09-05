@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useInterval } from '@/hooks/useInterval'
 import { useStore } from '@/store/Timer'
 
-export interface TimerProps {
-	duration: number
-}
-
-export default function CountdownApp({ duration }: TimerProps) {
+export default function CountdownApp() {
 	const [time, timer, decrease, reset] = useStore((state) => [
 		state.time,
 		state.timer,
@@ -21,20 +17,13 @@ export default function CountdownApp({ duration }: TimerProps) {
 
 	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
-	useEffect(() => {
-		console.log(duration)
-		return () => {
-			reset(duration)
-		}
-	}, [timer])
-
 	const handleClick = () => {
 		setCountingDown(!countingDown)
 	}
 
 	const handleReset = () => {
 		setCountingDown(false)
-		reset(duration)
+		reset()
 	}
 
 	useInterval(

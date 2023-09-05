@@ -5,7 +5,7 @@ import { useStore } from '@/store/Timer'
 const Tabs = () => {
 	const [openTab, setOpenTab] = useState(1)
 
-	const [updateTimer] = useStore((s) => [s.updateTimer])
+	const [timer, updateTimer, reset] = useStore((s) => [s.timer, s.updateTimer, s.reset])
 
 	return (
 		<>
@@ -22,6 +22,7 @@ const Tabs = () => {
 									e.preventDefault()
 									setOpenTab(1)
 									updateTimer('default')
+									reset()
 								}}
 								data-toggle='tab'
 								href='#link1'
@@ -40,6 +41,7 @@ const Tabs = () => {
 									e.preventDefault()
 									setOpenTab(2)
 									updateTimer('shortBreak')
+									reset()
 								}}
 								data-toggle='tab'
 								href='#link2'
@@ -48,37 +50,11 @@ const Tabs = () => {
 								Short Break
 							</a>
 						</li>
-						<li className='-mb-px mr-2 last:mr-0 flex-auto text-center'>
-							<a
-								className={
-									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
-									(openTab === 3 ? 'text-white bg-blueGray-600' : 'text-blueGray-600 bg-white')
-								}
-								onClick={(e) => {
-									e.preventDefault()
-									setOpenTab(3)
-									updateTimer('longBreak')
-								}}
-								data-toggle='tab'
-								href='#link3'
-								role='tablist'
-							>
-								Long Break
-							</a>
-						</li>
 					</ul>
 					<div className='relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded'>
 						<div className='px-4 py-5 flex-auto'>
 							<div className='tab-content tab-space'>
-								<div className={openTab === 1 ? 'block' : 'hidden'} id='link1'>
-									<Timer duration={1500} />
-								</div>
-								<div className={openTab === 2 ? 'block' : 'hidden'} id='link2'>
-									<Timer duration={900} />
-								</div>
-								<div className={openTab === 3 ? 'block' : 'hidden'} id='link3'>
-									<Timer duration={300} />
-								</div>
+								<Timer />
 							</div>
 						</div>
 					</div>
