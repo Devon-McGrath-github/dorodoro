@@ -2,11 +2,10 @@ import { create } from 'zustand'
 
 // define types for state values and actions separately
 interface State {
-	time: number
+	duration: number
 	timer: string
 	countingDown: boolean
 }
-
 interface Actions {
 	updateTimer: (to: string) => void
 	toggleCountDown: (boolean: boolean) => void
@@ -16,7 +15,7 @@ interface Actions {
 
 // define the initial state
 const initialState: State = {
-	time: 1500,
+	duration: 1500,
 	timer: 'default',
 	countingDown: false,
 }
@@ -34,7 +33,7 @@ export const useStore = create<State & Actions>()((set, get) => ({
 	},
 
 	decrease: (by: number) => {
-		set({ time: get().time - by })
+		set({ duration: get().duration - by })
 	},
 
 	reset: () => {
@@ -43,13 +42,13 @@ export const useStore = create<State & Actions>()((set, get) => ({
 		// update timer duration
 		switch (get().timer) {
 			case 'shortBreak':
-				set({ time: (get().time = 300) })
+				set({ duration: (get().duration = 300) })
 				break
 			case 'longBreak':
-				set({ time: (get().time = 900) })
+				set({ duration: (get().duration = 900) })
 				break
 			default:
-				set({ time: (get().time = 1500) })
+				set({ duration: (get().duration = 1500) })
 				break
 		}
 	},

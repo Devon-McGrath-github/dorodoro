@@ -8,10 +8,10 @@ import Head from 'next/head'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-	const time = useStore((state) => state.time)
+	const duration = useStore((state) => state.duration)
 
-	const secondsToDisplay = time % 60
-	const minutesRemaining = (time - secondsToDisplay) / 60
+	const secondsToDisplay = duration % 60
+	const minutesRemaining = (duration - secondsToDisplay) / 60
 	const minutesToDisplay = minutesRemaining % 60
 
 	const twoDigits = (num: number) => String(num).padStart(2, '0')

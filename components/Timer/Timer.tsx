@@ -3,9 +3,9 @@ import { useInterval } from '@/hooks/useInterval'
 import { useStore } from '@/store/Timer'
 
 export default function CountdownApp() {
-	const [time, countingDown, toggleCountDown, decrease, reset] = useStore(
+	const [duration, countingDown, toggleCountDown, decrease, reset] = useStore(
 		(state) => [
-			state.time,
+			state.duration,
 			state.countingDown,
 			state.toggleCountDown,
 			state.decrease,
@@ -13,8 +13,8 @@ export default function CountdownApp() {
 		]
 	)
 
-	const secondsToDisplay = time % 60
-	const minutesRemaining = (time - secondsToDisplay) / 60
+	const secondsToDisplay = duration % 60
+	const minutesRemaining = (duration - secondsToDisplay) / 60
 	const minutesToDisplay = minutesRemaining % 60
 
 	const twoDigits = (num: number) => String(num).padStart(2, '0')
@@ -29,7 +29,7 @@ export default function CountdownApp() {
 
 	useInterval(
 		() => {
-			if (time > 0) {
+			if (duration > 0) {
 				decrease(1)
 			} else {
 				toggleCountDown(false)
