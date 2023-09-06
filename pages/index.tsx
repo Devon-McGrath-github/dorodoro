@@ -4,6 +4,7 @@ import Layout from '@/layouts'
 import { Inter } from 'next/font/google'
 import { useStore } from '@/store/Timer'
 import Head from 'next/head'
+import Alerts from '@/components/Timer/Alerts'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,6 +33,8 @@ export default function Home() {
 			>
 				<Tabs />
 			</main>
+
+			<Alerts />
 		</Layout>
 	)
 }

@@ -15,7 +15,7 @@ interface Actions {
 
 // define the initial state
 const initialState: State = {
-	duration: 1500,
+	duration: 3,
 	timer: 'default',
 	countingDown: false,
 }
