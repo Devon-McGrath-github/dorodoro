@@ -1,6 +1,7 @@
 import React from 'react'
 import { useInterval } from '@/hooks/useInterval'
 import { useStore } from '@/store/Timer'
+import ClockFormat from './ClockFormat'
 
 export default function CountdownApp() {
 	const [duration, countingDown, toggleCountDown, decrease, reset] = useStore(
@@ -12,12 +13,6 @@ export default function CountdownApp() {
 			state.reset,
 		]
 	)
-
-	const secondsToDisplay = duration % 60
-	const minutesRemaining = (duration - secondsToDisplay) / 60
-	const minutesToDisplay = minutesRemaining % 60
-
-	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
 	const handleClick = () => {
 		toggleCountDown(!countingDown)
@@ -43,7 +38,7 @@ export default function CountdownApp() {
 		<div className='grid grid-cols-2 grid-rows-2 gap-3'>
 			<div className='col-span-2'>
 				<h1 className='text-6xl text-center'>
-					{twoDigits(minutesToDisplay)}:{twoDigits(secondsToDisplay)}
+					<ClockFormat />
 				</h1>
 			</div>
 

@@ -15,7 +15,6 @@ export default function Home() {
 	const secondsToDisplay = duration % 60
 	const minutesRemaining = (duration - secondsToDisplay) / 60
 	const minutesToDisplay = minutesRemaining % 60
-
 	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
 	const formattedTimer = `${twoDigits(minutesToDisplay)}:${twoDigits(
@@ -31,6 +30,7 @@ export default function Home() {
 	return (
 		<Layout>
 			<Head>
+				{/* title cannot take react component so cannot reuse ClockFormat component */}
 				<title>{formattedTimer}</title>
 				<meta property='og:title' content='DoroDoro' />
 			</Head>
