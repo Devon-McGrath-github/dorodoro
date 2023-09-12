@@ -1,13 +1,9 @@
-import NavBar from '@/components/NavBar/NavBar'
 import Tabs from '@/components/Tabs/Tabs'
 import Layout from '@/layouts'
-import { Inter } from 'next/font/google'
 import { useStore } from '@/store/Timer'
 import Head from 'next/head'
 import Alerts from '@/components/Timer/Alerts'
 import { useEffect } from 'react'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 	const duration = useStore((state) => state.duration)
@@ -36,7 +32,7 @@ export default function Home() {
 			</Head>
 
 			<main
-				className={`flex flex-col items-center justify-between p-24 ${inter.className}`}
+				className={`flex flex-col items-center justify-between p-24 font-sans`}
 			>
 				<Tabs />
 			</main>
