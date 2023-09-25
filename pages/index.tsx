@@ -4,6 +4,7 @@ import { useStore } from '@/store/Timer'
 import Head from 'next/head'
 import Alerts from '@/components/Timer/Alerts'
 import { useEffect } from 'react'
+import NavBar from '@/components/NavBar/NavBar'
 
 export default function Home() {
 	const duration = useStore((state) => state.duration)
@@ -30,6 +31,8 @@ export default function Home() {
 				<title>{formattedTimer}</title>
 				<meta property='og:title' content='DoroDoro' />
 			</Head>
+
+			<NavBar />
 
 			<main
 				className={`flex flex-col items-center justify-between p-24 font-sans`}
