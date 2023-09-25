@@ -15,7 +15,7 @@ interface Actions {
 
 // define the initial state
 const initialState: State = {
-	duration: 3,
+	duration: 1500,
 	timer: 'default',
 	countingDown: false,
 }
@@ -42,7 +42,7 @@ export const useStore = create<State & Actions>()((set, get) => ({
 		// update timer duration
 		switch (get().timer) {
 			case 'shortBreak':
-				set({ duration: (get().duration = 300) })
+				set({ duration: (get().duration = 3) })
 				break
 			case 'longBreak':
 				set({ duration: (get().duration = 900) })
