@@ -5,6 +5,7 @@ interface State {
 	duration: number
 	timer: string
 	countingDown: boolean
+	color: string
 }
 interface Actions {
 	updateTimer: (to: string) => void
@@ -18,6 +19,7 @@ const initialState: State = {
 	duration: 1500,
 	timer: 'default',
 	countingDown: false,
+	color: '#00FF00',
 }
 
 // create store
