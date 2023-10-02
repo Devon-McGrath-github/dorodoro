@@ -18,8 +18,8 @@ const Tabs = () => {
 						<li className='flex-auto text-center'>
 							<a
 								className={
-									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
-									(openTab === 1 ? 'bg-blueGray-600' : 'text-blueGray-600 ')
+									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-skin-primary border-none hover:bg-opacity-50 focus:ring-gray-200' +
+									(openTab === 1 ? 'bg-opacity-3000' : 'bg-opacity-30')
 								}
 								onClick={(e) => {
 									e.preventDefault()
@@ -37,7 +37,7 @@ const Tabs = () => {
 						<li className='flex-auto text-center'>
 							<a
 								className={
-									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
+									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-skin-primary bg-opacity-80 border-none hover:bg-opacity-50 focus:ring-gray-200' +
 									(openTab === 2 ? ' bg-blueGray-600' : 'text-blueGray-600')
 								}
 								onClick={(e) => {
@@ -56,7 +56,7 @@ const Tabs = () => {
 						<li className='flex-auto text-center'>
 							<a
 								className={
-									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
+									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-skin-primary bg-opacity-80 border-none hover:bg-opacity-50 focus:ring-gray-200' +
 									(openTab === 3 ? ' bg-blueGray-600' : 'text-blueGray-600 ')
 								}
 								onClick={(e) => {
@@ -73,7 +73,7 @@ const Tabs = () => {
 							</a>
 						</li>
 					</ul>
-					<div className='relative flex flex-col min-w-0 break-words w-full shadow-lg rounded'>
+					<div className='relative flex flex-col min-w-0 break-words w-full shadow-lg rounded bg-skin-primary bg-opacity-50'>
 						<div className='px-4 py-5 flex-auto'>
 							<div className='tab-content tab-space'>
 								<Timer />
