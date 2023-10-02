@@ -12,6 +12,7 @@ interface Actions {
 	toggleCountDown: (boolean: boolean) => void
 	decrease: (by: number) => void
 	reset: () => void
+	updateColor: (to: string) => void
 }
 
 // define the initial state
@@ -19,7 +20,7 @@ const initialState: State = {
 	duration: 1500,
 	timer: 'default',
 	countingDown: false,
-	color: '#00FF00',
+	color: '#db2777',
 }
 
 // create store
@@ -53,5 +54,9 @@ export const useStore = create<State & Actions>()((set, get) => ({
 				set({ duration: (get().duration = 1500) })
 				break
 		}
+	},
+
+	updateColor: (to: string) => {
+		set({ color: (get().color = to) })
 	},
 }))

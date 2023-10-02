@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Alerts from '@/components/Timer/Alerts'
 import { useEffect } from 'react'
 import NavBar from '@/components/NavBar/NavBar'
+import ColorPicker from '@/components/ColorPicker'
 
 export default function Home() {
 	const duration = useStore((state) => state.duration)
@@ -38,6 +39,7 @@ export default function Home() {
 				className={`flex flex-col items-center justify-between p-24 font-sans`}
 			>
 				<Tabs />
+				<ColorPicker />
 			</main>
 
 			<Alerts />
