@@ -11,7 +11,7 @@ function ClockFormat() {
 	const minutesToDisplay = minutesRemaining % 60
 
 	return (
-		<div className='text-6xl text-center font-mono text-skin-primary '>
+		<div className='text-6xl text-center font-mono'>
 			{twoDigits(minutesToDisplay)}:{twoDigits(secondsToDisplay)}
 		</div>
 	)

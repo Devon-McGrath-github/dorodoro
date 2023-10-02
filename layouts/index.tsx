@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { Inter, Roboto_Mono } from 'next/font/google'
 import { getRGBColor, getAccessibleColor } from '../utils/index'
 import { useStore } from '@/store/Timer'
+import Head from 'next/head'
 
 interface LayoutProviderProps {
 	children: ReactNode
@@ -26,9 +27,9 @@ const Layout = ({ children }: LayoutProviderProps) => {
 
 	return (
 		<>
-			<head>
+			<Head>
 				<style>:root {`{${primaryColor} ${a11yColor}}`}</style>
-			</head>
+			</Head>
 			<div className={`min-h-screen ${roboto_mono.variable} ${inter.variable}`}>
 				<div>{children}</div>
 			</div>

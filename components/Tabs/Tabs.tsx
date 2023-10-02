@@ -19,9 +19,7 @@ const Tabs = () => {
 							<a
 								className={
 									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
-									(openTab === 1
-										? 'text-white bg-blueGray-600'
-										: 'text-blueGray-600 bg-white')
+									(openTab === 1 ? ' bg-blueGray-600' : 'text-blueGray-600 ')
 								}
 								onClick={(e) => {
 									e.preventDefault()
@@ -40,9 +38,7 @@ const Tabs = () => {
 							<a
 								className={
 									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
-									(openTab === 2
-										? 'text-white bg-blueGray-600'
-										: 'text-blueGray-600 bg-white')
+									(openTab === 2 ? ' bg-blueGray-600' : 'text-blueGray-600')
 								}
 								onClick={(e) => {
 									e.preventDefault()
@@ -61,9 +57,7 @@ const Tabs = () => {
 							<a
 								className={
 									'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal ' +
-									(openTab === 3
-										? 'text-white bg-blueGray-600'
-										: 'text-blueGray-600 bg-white')
+									(openTab === 3 ? ' bg-blueGray-600' : 'text-blueGray-600 ')
 								}
 								onClick={(e) => {
 									e.preventDefault()
@@ -79,7 +73,7 @@ const Tabs = () => {
 							</a>
 						</li>
 					</ul>
-					<div className='relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg rounded'>
+					<div className='relative flex flex-col min-w-0 break-words w-full shadow-lg rounded'>
 						<div className='px-4 py-5 flex-auto'>
 							<div className='tab-content tab-space'>
 								<Timer />
