@@ -19,7 +19,9 @@ export default function Alerts() {
 	//   must know if its 1st timer, second 3rd or forth to switch to shortbreak or long break
 	//   likely have to update store to do this. New state element, rework tabs page
 
-	useEffect(() => {
+
+	// comment out 
+/* 	useEffect(() => {
 		console.log(duration)
 
 		if (duration === 0) {
@@ -33,7 +35,7 @@ export default function Alerts() {
 			console.log(duration)
 		}
 		return
-	}, [duration])
+	}, [duration]) */
 
 	return <></>
 }
