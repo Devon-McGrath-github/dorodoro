@@ -9,19 +9,19 @@ export default function CountdownApp() {
 	const [
 		duration,
 		taskCount,
-		incrementTaskCount,
 		countingDown,
 		toggleCountDown,
 		decrease,
 		reset,
+		switchTimer,
 	] = useStore((s) => [
 		s.duration,
 		s.taskCount,
-		s.incrementTaskCount,
 		s.countingDown,
 		s.toggleCountDown,
 		s.decrease,
 		s.reset,
+		s.switchTimer,
 	])
 
 	const handleClick = () => {
@@ -37,8 +37,8 @@ export default function CountdownApp() {
 			if (duration > 0) {
 				decrease(1)
 			} else {
-				toggleCountDown(false)
-				incrementTaskCount()
+				switchTimer()
+				reset()
 			}
 		},
 		countingDown ? 1000 : null

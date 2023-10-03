@@ -1,19 +1,5 @@
 import { create } from 'zustand'
 
-// add logic for handling pomodoro technique tab/duration switching:
-// using 'timer'
-//   if 'timer' !== default
-//      breaks always return to default
-//   else
-//      must have logic to go to short break every 3 times
-//      long break every 4.
-//      Possibly needs new state element to track '
-//
-// may be easiest to track 'tasks' and use math to determine active tab based on completed tasks.
-// tasks only increments when 'default' timer duration reaches 0.
-
-// define timer object with name and duration
-
 // define types for state values and actions separately
 interface State {
 	duration: number
@@ -28,7 +14,7 @@ interface Actions {
 	decrease: (by: number) => void
 	reset: () => void
 	updateColor: (to: string) => void
-	incrementTaskCount: () => void
+	switchTimer: () => void
 }
 
 // define the initial state
@@ -77,7 +63,16 @@ export const useStore = create<State & Actions>()((set, get) => ({
 		set({ color: (get().color = to) })
 	},
 
-	incrementTaskCount: () => {
-		set({ taskCount: (get().taskCount = ++get().taskCount) })
+	switchTimer: () => {
+		if (get().timer !== 'default') {
+			set({ timer: (get().timer = 'default') })
+		} else {
+			set({ taskCount: (get().taskCount = ++get().taskCount) })
+			if (get().taskCount % 4 === 0) {
+				set({ timer: (get().timer = 'longBreak') })
+			} else {
+				set({ timer: (get().timer = 'shortBreak') })
+			}
+		}
 	},
 }))
