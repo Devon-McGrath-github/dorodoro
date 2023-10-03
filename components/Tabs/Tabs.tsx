@@ -30,12 +30,8 @@ const Tabs = () => {
 						<Tab tabName={'Short Break'} timerType={'shortBreak'} />
 						<Tab tabName={'Long Break'} timerType={'longBreak'} />
 					</ul>
-					<div className='relative flex flex-col min-w-0 break-words w-full shadow-lg rounded bg-skin-primary bg-opacity-50 '>
-						<div className='px-4 py-5 flex-auto'>
-							<div className='tab-content tab-space'>
-								<Timer />
-							</div>
-						</div>
+					<div className='min-w-0 break-words w-full rounded'>
+						<Timer />
 					</div>
 				</div>
 			</div>
