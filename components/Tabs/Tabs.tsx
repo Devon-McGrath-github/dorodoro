@@ -1,23 +1,7 @@
 import Timer from '../Timer/Timer'
-import { useStore } from '@/store/Timer'
 import Tab from './Tab'
 
 const Tabs = () => {
-	const [timer, updateTimer, reset] = useStore((s) => [
-		s.timer,
-		s.updateTimer,
-		s.reset,
-	])
-
-	// Tabs should work based on timer
-
-	//	if timer === default set active tab component to.....
-	//
-	//
-	//
-	//
-	//
-
 	return (
 		<>
 			<div className='flex flex-wrap'>
