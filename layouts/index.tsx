@@ -19,7 +19,6 @@ const roboto_mono = Roboto_Mono({
 })
 
 const Layout = ({ children }: LayoutProviderProps) => {
-	// Colors:
 	const [color] = useStore((s) => [s.color])
 
 	const primaryColor = getRGBColor(color, 'primary')

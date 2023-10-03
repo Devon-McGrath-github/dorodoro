@@ -48,13 +48,13 @@ export const useStore = create<State & Actions>()((set, get) => ({
 		// update timer duration
 		switch (get().timer) {
 			case 'shortBreak':
-				set({ duration: (get().duration = 3) })
+				set({ duration: (get().duration = 300) })
 				break
 			case 'longBreak':
-				set({ duration: (get().duration = 9) })
+				set({ duration: (get().duration = 900) })
 				break
 			default:
-				set({ duration: (get().duration = 15) })
+				set({ duration: (get().duration = 1500) })
 				break
 		}
 	},

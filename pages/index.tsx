@@ -21,7 +21,7 @@ export default function Home() {
 
 	// on mount request permission for alerts.
 	useEffect(() => {
-		// give requestPermission a callback .then to handle response (add to state?)
+		// TODO: requestPermission a callback .then to handle response (add to state?)
 		Notification.requestPermission()
 	}, [])
 

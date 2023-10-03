@@ -48,7 +48,7 @@ export default function CountdownApp() {
 	return (
 		<div className='grid grid-cols-2 grid-rows-2 gap-3'>
 			<div className='col-span-2'>
-				<h1 className={`text-6xl text-center`}>
+				<h1 className={`text-10xl text-center`}>
 					<ClockFormat />
 				</h1>
 			</div>
