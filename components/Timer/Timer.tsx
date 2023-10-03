@@ -1,18 +1,28 @@
+'use client'
+
 import React from 'react'
 import { useInterval } from '@/hooks/useInterval'
 import { useStore } from '@/store/Timer'
 import ClockFormat from './ClockFormat'
 
 export default function CountdownApp() {
-	const [duration, countingDown, toggleCountDown, decrease, reset] = useStore(
-		(state) => [
-			state.duration,
-			state.countingDown,
-			state.toggleCountDown,
-			state.decrease,
-			state.reset,
-		]
-	)
+	const [
+		duration,
+		taskCount,
+		incrementTaskCount,
+		countingDown,
+		toggleCountDown,
+		decrease,
+		reset,
+	] = useStore((s) => [
+		s.duration,
+		s.taskCount,
+		s.incrementTaskCount,
+		s.countingDown,
+		s.toggleCountDown,
+		s.decrease,
+		s.reset,
+	])
 
 	const handleClick = () => {
 		toggleCountDown(!countingDown)
@@ -28,6 +38,7 @@ export default function CountdownApp() {
 				decrease(1)
 			} else {
 				toggleCountDown(false)
+				incrementTaskCount()
 			}
 		},
 		countingDown ? 1000 : null
@@ -57,6 +68,7 @@ export default function CountdownApp() {
 			>
 				Reset
 			</button>
+			<h2 className='text-center col-span-2'>{taskCount}</h2>
 		</div>
 	)
 }
