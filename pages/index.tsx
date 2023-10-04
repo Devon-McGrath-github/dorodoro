@@ -19,10 +19,14 @@ export default function Home() {
 		secondsToDisplay
 	)}`
 
+	async function getNotificationPermissions() {
+		// TODO: requestPermission a callback .then to handle response (add to state?)
+		let response = await Notification.requestPermission()
+		console.log('permission: ' + response)
+	}
 	// on mount request permission for alerts.
 	useEffect(() => {
-		// TODO: requestPermission a callback .then to handle response (add to state?)
-		Notification.requestPermission()
+		getNotificationPermissions()
 	}, [])
 
 	return (
