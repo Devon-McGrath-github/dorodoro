@@ -15,6 +15,7 @@ interface Actions {
 	reset: () => void
 	updateColor: (to: string) => void
 	switchTimer: () => void
+	resetTaskCount: () => void
 }
 
 // define the initial state
@@ -57,6 +58,10 @@ export const useStore = create<State & Actions>()((set, get) => ({
 				set({ duration: (get().duration = 1500) })
 				break
 		}
+	},
+
+	resetTaskCount: () => {
+		set({ taskCount: (get().taskCount = 1) })
 	},
 
 	updateColor: (to: string) => {

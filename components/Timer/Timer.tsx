@@ -14,6 +14,7 @@ export default function CountdownApp() {
 		decrease,
 		reset,
 		switchTimer,
+		resetTaskCount,
 	] = useStore((s) => [
 		s.duration,
 		s.taskCount,
@@ -22,6 +23,7 @@ export default function CountdownApp() {
 		s.decrease,
 		s.reset,
 		s.switchTimer,
+		s.resetTaskCount,
 	])
 
 	const handleClick = () => {
@@ -68,7 +70,9 @@ export default function CountdownApp() {
 			>
 				Reset
 			</button>
-			<h2 className='text-center col-span-2'>{taskCount}</h2>
+			<div className='text-center col-span-2'>
+				<button onClick={resetTaskCount}>#{taskCount}</button>
+			</div>
 		</div>
 	)
 }

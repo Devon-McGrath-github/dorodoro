@@ -1,10 +1,7 @@
 import Timer from '../Timer/Timer'
-import { useStore } from '@/store/Timer'
 import Tab from './Tab'
 
 const Tabs = () => {
-	const [timer] = useStore((s) => [s.timer])
-
 	return (
 		<>
 			<div className='flex flex-wrap'>
