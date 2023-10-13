@@ -14,6 +14,7 @@ export default function Home() {
 	const minutesToDisplay = minutesRemaining % 60
 	const twoDigits = (num: number) => String(num).padStart(2, '0')
 
+	// title cannot be a react component so cannot reuse formatted timer
 	const formattedTimer = `${twoDigits(minutesToDisplay)}:${twoDigits(
 		secondsToDisplay
 	)} - Pomodoro Timer`
@@ -32,19 +33,18 @@ export default function Home() {
 	return (
 		<Layout>
 			<Head>
-				{/* title cannot take react component so cannot reuse ClockFormat component */}
 				<title>{formattedTimer}</title>
 				<meta property='og:title' content='DoroDoro' />
 			</Head>
+
 			<NavBar />
-			{/*  TODO: give sidebar props or a context that can be iterated through to
-			populate the sidebar options. */}
 
 			<main
 				className={`flex flex-col items-center justify-between p-24 font-sans`}
 			>
 				<Tabs />
 			</main>
+
 			<Alerts />
 		</Layout>
 	)

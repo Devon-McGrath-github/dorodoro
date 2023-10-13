@@ -3,8 +3,10 @@ import Sidebar from '../Sidebar'
 
 const NavBar = () => {
 	return (
-		<nav>
-			<Link href='/'>ICON</Link>
+		<nav className='fixed w-full flex flex-row items-center justify-between p-5'>
+			<Link className='font-sans' href='/'>
+				ICON
+			</Link>
 			<Sidebar />
 		</nav>
 	)
