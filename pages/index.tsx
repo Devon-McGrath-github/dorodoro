@@ -5,7 +5,6 @@ import Head from 'next/head'
 import Alerts from '@/components/Timer/Alerts'
 import { useEffect } from 'react'
 import NavBar from '@/components/NavBar/NavBar'
-import Sidebar from '@/components/Sidebar'
 
 export default function Home() {
 	const duration = useStore((state) => state.duration)
@@ -17,7 +16,7 @@ export default function Home() {
 
 	const formattedTimer = `${twoDigits(minutesToDisplay)}:${twoDigits(
 		secondsToDisplay
-	)}`
+	)} - Pomodoro Timer`
 
 	async function getNotificationPermissions() {
 		// TODO: requestPermission a callback .then to handle response (add to state?)
@@ -40,7 +39,7 @@ export default function Home() {
 			<NavBar />
 			{/*  TODO: give sidebar props or a context that can be iterated through to
 			populate the sidebar options. */}
-			<Sidebar />
+
 			<main
 				className={`flex flex-col items-center justify-between p-24 font-sans`}
 			>

@@ -1,7 +1,11 @@
+'use client'
+
 import { useState } from 'react'
 import ColorPicker from './ColorPicker'
 
-const Sidebar = () => {
+import React from 'react'
+
+export default function Sidebar() {
 	const [showSidebar, setShowSidebar] = useState(false)
 
 	return (
@@ -16,8 +20,7 @@ const Sidebar = () => {
 			) : (
 				<svg
 					onClick={() => setShowSidebar(!showSidebar)}
-					className='fixed  z-30 flex items-center cursor-pointer right-10 top-6'
-					fill='#2563EB'
+					className='fixed  z-30 flex items-center cursor-pointer right-10 top-6 fill-white'
 					viewBox='0 0 100 80'
 					width='40'
 					height='40'
@@ -29,15 +32,12 @@ const Sidebar = () => {
 			)}
 
 			<div
-				className={`top-0 right-0 w-[35vw] bg-blue-600  p-10 pl-20 text-white fixed h-full z-40  ease-in-out duration-300 ${
+				className={`drop-shadow-4xl top-0 right-0 w-[35vw] bg-skin-primary  p-10 pl-20 text-white fixed h-full z-40  ease-in-out duration-300 ${
 					showSidebar ? 'translate-x-0 ' : 'translate-x-full'
 				}`}
 			>
-				<h3 className='mt-20 text-4xl font-semibold text-white'>Sidebar</h3>
 				<ColorPicker />
 			</div>
 		</>
 	)
 }
-
-export default Sidebar
