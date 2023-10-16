@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import ColorPicker from './ColorPicker'
 
@@ -23,7 +21,7 @@ export default function Sidebar() {
 			</svg>
 
 			<div
-				className={`flex flex-col drop-shadow-4xl top-0 right-0 w-[35vw] bg-skin-primary p-5 text-white fixed h-full z-40  ease-in-out duration-300 ${
+				className={`bg-skin-primary flex flex-col drop-shadow-4xl top-0 right-0 w-[35vw] p-5 text-white absolute  min-h-screen z-40  ease-in-out duration-300 ${
 					showSidebar ? 'translate-x-0 ' : 'translate-x-full'
 				}`}
 			>
@@ -36,7 +34,10 @@ export default function Sidebar() {
 					</button>
 				</div>
 
-				<ColorPicker />
+				<div className='flex flex-row gap-4'>
+					<h3>Colour: </h3>
+					<ColorPicker />
+				</div>
 			</div>
 		</>
 	)
