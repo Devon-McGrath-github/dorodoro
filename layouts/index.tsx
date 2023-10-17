@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProviderProps) => {
 				<style>:root {`{${primaryColor} ${a11yColor}}`}</style>
 			</Head>
 			<div className={`min-h-screen ${roboto_mono.variable} ${inter.variable}`}>
-				<div>{children}</div>
+				{children}
 			</div>
 		</>
 	)
