@@ -25,7 +25,10 @@ export default function Sidebar() {
 						<XMarkIcon className='h-10 w-10' />
 					</div>
 
-					<div className='flex flex-col items-center px-3'>
+					<div className='flex flex-col gap-4 items-center px-3'>
+						<div className='flex flex-row items-center justify-between gap-4 w-full'>
+							<h1 className='text-2xl font-bold'>Settings:</h1>
+						</div>
 						<div className='flex flex-row items-center justify-between gap-4 w-full'>
 							<h2 className='text-xl font-medium'>Colour</h2>
 							<ColorPicker />
