@@ -5,7 +5,7 @@ const NavBar = () => {
 	return (
 		<nav className='fixed w-full flex flex-row items-center justify-between p-5'>
 			<Link className='font-sans' href='/'>
-				ICON
+				DoroDoro
 			</Link>
 			<Sidebar />
 		</nav>
