@@ -18,10 +18,7 @@ export default function Sidebar() {
 			>
 				{/* background div to avoid animations delaying change of background color */}
 				<div className='flex flex-col gap-4 p-5 bg-skin-primary flex-1'>
-					<div
-						onClick={() => setShowSidebar(false)}
-						className=' flex flex-row justify-end'
-					>
+					<div onClick={() => setShowSidebar(false)} className='ml-auto'>
 						<XMarkIcon className='h-10 w-10' />
 					</div>
 
