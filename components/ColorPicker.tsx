@@ -7,9 +7,8 @@ function ColorPicker() {
 	const [color, updateColor] = useStore((s) => [s.color, s.updateColor])
 	const [isOpen, setIsOpen] = useState(false)
 
-	const popover = React.useRef<HTMLDivElement>(null)
+	const popover = useRef<HTMLDivElement>(null)
 	const close = useCallback(() => setIsOpen(false), [])
-	console.log(popover)
 	useClickOutside(popover, close)
 
 	return (

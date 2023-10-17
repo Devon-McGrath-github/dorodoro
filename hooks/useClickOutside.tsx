@@ -18,8 +18,6 @@ const useClickOutside = (ref: React.RefObject<any>, handler: Handler) => {
 		}
 
 		const validateEventStart = (event: MouseEvent | TouchEvent) => {
-			console.log('ref: ')
-			console.log(ref)
 
 			startedWhenMounted = ref.current
 			startedInside = ref.current && ref.current.contains(event.target)
