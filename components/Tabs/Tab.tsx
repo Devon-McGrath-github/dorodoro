@@ -14,10 +14,10 @@ const Tab = ({ tabName, timerType }: TabProps) => {
 	])
 
 	return (
-		<li className='flex-auto text-center'>
-			<a
+		<li className='flex text-center'>
+			<div
 				className={
-					'text-xs cursor-pointer font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-skin-primary border-none hover:bg-opacity-50 focus:ring-gray-200 ' +
+					'text-xs cursor-pointer font-bold uppercase px-5 py-3 rounded bg-skin-primary box-border border border-transparent hover:border hover:border-white hover:bg-opacity-50 focus:ring-gray-200 ' +
 					(timer === timerType ? 'bg-opacity-40' : 'bg-opacity-100')
 				}
 				onClick={(e) => {
@@ -25,12 +25,9 @@ const Tab = ({ tabName, timerType }: TabProps) => {
 					updateTimer(timerType)
 					reset()
 				}}
-				data-toggle='tab'
-				href='#'
-				role='tablist'
 			>
 				{tabName}
-			</a>
+			</div>
 		</li>
 	)
 }

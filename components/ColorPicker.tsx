@@ -14,13 +14,17 @@ function ColorPicker() {
 	return (
 		<>
 			<div
-				className='w-10 h-10 rounded-full border-2 border-solid border-white bg-skin-primary'
+				className='w-10 h-10 rounded-full border-2 border-solid border-white bg-skin-primary cursor-pointer'
 				onClick={() => setIsOpen(true)}
 			></div>
 
 			{isOpen && (
 				<div className='absolute' ref={popover}>
-					<HexColorPicker color={color} onChange={updateColor} />
+					<HexColorPicker
+						className='cursor-pointer'
+						color={color}
+						onChange={updateColor}
+					/>
 				</div>
 			)}
 

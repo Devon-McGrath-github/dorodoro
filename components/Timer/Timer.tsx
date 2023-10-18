@@ -64,7 +64,7 @@ export default function CountdownApp() {
 			</button>
 
 			<button
-				className='bg-skin-primary hover:bg-opacity-40 hover:border focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5'
+				className='bg-skin-primary hover:bg-opacity-40 box-border hover:border focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5'
 				onClick={handleReset}
 				type='button'
 			>
