@@ -40,7 +40,7 @@ export default function Home() {
 			<NavBar />
 
 			<main
-				className={`flex flex-col items-center justify-between p-5 pt-24 md:p-24 font-sans`}
+				className={`flex flex-col items-center justify-center p-5 pt-24 md:p-24 font-sans`}
 			>
 				<Tabs />
 			</main>

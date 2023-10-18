@@ -48,15 +48,15 @@ export default function CountdownApp() {
 	)
 
 	return (
-		<div className='grid grid-cols-2 grid-rows-2 gap-3'>
+		<div className='grid grid-cols-2 auto-rows-auto gap-3'>
 			<div className='col-span-2'>
-				<h1 className={`text-10xl text-center`}>
+				<h1 className={`text-center`}>
 					<ClockFormat />
 				</h1>
 			</div>
 
 			<button
-				className='bg-skin-primary hover:bg-opacity-40 hover:border focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5'
+				className='bg-skin-primary hover:bg-opacity-40 box-border border border-transparent hover:border hover:border-white focus:ring-gray-200 font-medium rounded-lg text-lg px-5 py-2.5'
 				onClick={handleClick}
 				type='button'
 			>
@@ -64,7 +64,7 @@ export default function CountdownApp() {
 			</button>
 
 			<button
-				className='bg-skin-primary hover:bg-opacity-40 box-border hover:border focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5'
+				className='bg-skin-primary hover:bg-opacity-40 box-border border border-transparent hover:border hover:border-white focus:ring-gray-200 font-medium rounded-lg text-lg px-5 py-2.5'
 				onClick={handleReset}
 				type='button'
 			>
