@@ -12,14 +12,14 @@ export default function Sidebar() {
 			</div>
 
 			<div
-				className={`font-sans flex  drop-shadow-4xl top-0 right-0 w-[30vw] text-white absolute  min-h-screen z-40  ease-in-out duration-300 
+				className={`font-sans flex  drop-shadow-4xl top-0 right-0 w-full min-w-min max-w-md bg-white bg-opacity-100 text-white absolute  min-h-screen z-40  ease-in-out duration-300 
 				${showSidebar ? 'translate-x-0 ' : 'translate-x-full'}
 				`}
 			>
 				{/* background div to avoid animations delaying change of background color */}
-				<div className='flex flex-col gap-4 p-5 bg-skin-primary flex-1'>
+				<div className='flex flex-col gap-4 p-5 bg-skin-primary bg-opacity-80 flex-1'>
 					<div onClick={() => setShowSidebar(false)} className='ml-auto'>
-						<XMarkIcon className='h-10 w-10' />
+						<XMarkIcon className='h-10 w-10 ' />
 					</div>
 
 					<div className='flex flex-col gap-4 items-center px-3'>
