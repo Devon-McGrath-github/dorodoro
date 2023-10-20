@@ -14,7 +14,7 @@ const Tab = ({ tabName, timerType }: TabProps) => {
 	])
 
 	return (
-		<li className='flex-auto text-center'>
+		<li className='flex-1 text-center'>
 			<div
 				className={
 					'text-xs cursor-pointer font-bold uppercase px-5 py-3 rounded bg-skin-primary box-border border border-transparent hover:border hover:border-white hover:bg-opacity-50 focus:ring-gray-200 ' +
