@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-const GOOGLE_TAG_MANAGER_ID = 'GTM-MSXRDQJQ'
+const GOOGLE_TAG_MANAGER_ID = 'G-HZ5FVTE39B'
 
 export default function Document() {
 	return (
