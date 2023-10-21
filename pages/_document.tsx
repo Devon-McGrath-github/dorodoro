@@ -8,8 +8,10 @@ export default function Document() {
 		<Html lang='en'>
 			<Head>
 				<Script
+					async
 					src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_MANAGER_ID}`}
-				/>
+				></Script>
+
 				<Script id='google-analytics'>
 					{`
           window.dataLayer = window.dataLayer || [];
@@ -21,14 +23,6 @@ export default function Document() {
 				</Script>
 			</Head>
 			<body className='min-h-screen text-white bg-skin-primary bg-opacity-70'>
-				{/* <noscript
-					dangerouslySetInnerHTML={{
-						__html: `
-              <iframe src="https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-            `,
-					}}
-				/> */}
 				<Main />
 				<NextScript />
 			</body>
