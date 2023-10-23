@@ -24,19 +24,29 @@ const Tabs = () => {
 				className='flex w-full mb-0 list-none flex-wrap pt-3 pb-4 flex-row gap-2'
 				role='tablist'
 			>
-				<Tab tabName={'Focus'} timerType={'default'} />
+				<Tab tabName={'Focus'} timerType={'default'} key='focus' />
 
-				{isMobile ? (
-					<>
-						<Tab tabName={'Short'} timerType={'shortBreak'} />
-						<Tab tabName={'Long'} timerType={'longBreak'} />
-					</>
-				) : (
-					<>
-						<Tab tabName={'Short Break'} timerType={'shortBreak'} />
-						<Tab tabName={'Long Break'} timerType={'longBreak'} />
-					</>
-				)}
+				{isMobile
+					? [
+							<Tab
+								tabName={'Short'}
+								timerType={'shortBreak'}
+								key='shortBreak'
+							/>,
+							<Tab tabName={'Long'} timerType={'longBreak'} key='longBreak' />,
+					  ]
+					: [
+							<Tab
+								tabName={'Short Break'}
+								timerType={'shortBreak'}
+								key='shortBreak'
+							/>,
+							<Tab
+								tabName={'Long Break'}
+								timerType={'longBreak'}
+								key='longBreak'
+							/>,
+					  ]}
 			</ul>
 			<div className='min-w-0 break-words w-full rounded'>
 				<Timer />
