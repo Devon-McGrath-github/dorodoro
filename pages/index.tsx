@@ -34,7 +34,13 @@ export default function Home() {
 		<Layout>
 			<Head>
 				<title>{formattedTimer}</title>
-				<meta property='og:title' content='DoroDoro' />
+				<meta property='og:title' content='Dorotimer' />
+				<meta
+					name='description'
+					content='Dorotimer is a customziable pomodoro technique timer designed for desktops and mobile browsers. Customizable and configurable to suit your needs, you can use Dorotimer to maintain concentration while performing tasks such as studying, programming or writing.'
+					key='desc'
+				/>
+				<meta name='robots' content='index, follow' />
 			</Head>
 
 			<NavBar />
