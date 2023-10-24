@@ -14,6 +14,7 @@ function ColorPicker() {
 	return (
 		<>
 			<div
+				id='color_picker'
 				className='w-10 h-10 rounded-full border-2 border-solid border-white bg-skin-primary cursor-pointer'
 				onClick={() => setIsOpen(true)}
 			></div>

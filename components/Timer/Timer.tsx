@@ -56,6 +56,7 @@ export default function CountdownApp() {
 			</div>
 
 			<button
+				id='toggle_countdown_btn'
 				className='bg-skin-primary hover:bg-opacity-40 box-border border border-transparent hover:border hover:border-white focus:ring-gray-200 font-medium rounded-lg text-lg px-5 py-2.5'
 				onClick={handleClick}
 				type='button'
@@ -64,6 +65,7 @@ export default function CountdownApp() {
 			</button>
 
 			<button
+				id='reset_countdown_btn'
 				className='bg-skin-primary hover:bg-opacity-40 box-border border border-transparent hover:border hover:border-white focus:ring-gray-200 font-medium rounded-lg text-lg px-5 py-2.5'
 				onClick={handleReset}
 				type='button'
@@ -71,7 +73,9 @@ export default function CountdownApp() {
 				Reset
 			</button>
 			<div className='text-center col-span-2'>
-				<button onClick={resetTaskCount}>#{taskCount}</button>
+				<button id='reset_taskcount_btn' onClick={resetTaskCount}>
+					#{taskCount}
+				</button>
 			</div>
 		</div>
 	)
