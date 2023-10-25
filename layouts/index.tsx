@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Inter, Roboto_Mono } from 'next/font/google'
+import { Inter, Rubik_Mono_One, Azeret_Mono } from 'next/font/google'
 import { getRGBColor, getAccessibleColor } from '../utils/index'
 import { useStore } from '@/store/Timer'
 import Head from 'next/head'
@@ -13,9 +13,11 @@ const inter = Inter({
 	subsets: ['latin'],
 	variable: '--font-inter',
 })
-const roboto_mono = Roboto_Mono({
+const font_mono = Azeret_Mono({
+	weight: '600',
+	style: 'normal',
 	subsets: ['latin'],
-	variable: '--font-roboto-mono',
+	variable: '--font-mono',
 })
 
 const Layout = ({ children }: LayoutProviderProps) => {
@@ -29,7 +31,7 @@ const Layout = ({ children }: LayoutProviderProps) => {
 			<Head>
 				<style>:root {`{${primaryColor} ${a11yColor}}`}</style>
 			</Head>
-			<div className={`min-h-screen ${roboto_mono.variable} ${inter.variable}`}>
+			<div className={`min-h-screen ${font_mono.variable} ${inter.variable}`}>
 				{children}
 			</div>
 		</>
