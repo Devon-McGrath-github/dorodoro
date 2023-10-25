@@ -18,9 +18,12 @@ export default function Alerts() {
 
 	useEffect(() => {
 		if (duration === 0) {
-			new Notification('Times Up', {
+			const notification = new Notification('Times Up', {
 				body: notifications[timer as keyof NotificationsLayout],
 			})
+			notification.onclick = () => {
+				window.focus()
+			}
 		}
 		return
 	}, [duration])
