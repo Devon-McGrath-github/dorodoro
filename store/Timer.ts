@@ -20,7 +20,7 @@ interface Actions {
 
 // define the initial state
 const initialState: State = {
-	duration: 1500,
+	duration: 1800,
 	timer: 'default',
 	countingDown: false,
 	color: '#121212',
@@ -55,7 +55,7 @@ export const useStore = create<State & Actions>()((set, get) => ({
 				set({ duration: (get().duration = 900) })
 				break
 			default:
-				set({ duration: (get().duration = 1500) })
+				set({ duration: (get().duration = 1800) })
 				break
 		}
 	},

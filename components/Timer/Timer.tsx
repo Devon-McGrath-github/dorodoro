@@ -74,7 +74,7 @@ export default function CountdownApp() {
 			</button>
 			<div className='text-center col-span-2'>
 				<button id='reset_taskcount_btn' onClick={resetTaskCount}>
-					#{taskCount}
+					Task #{taskCount}
 				</button>
 			</div>
 		</div>
