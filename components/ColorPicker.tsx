@@ -6,6 +6,15 @@ import { Popover, Transition } from '@headlessui/react'
 function ColorPicker() {
 	const [color, updateColor] = useStore((s) => [s.color, s.updateColor])
 
+	const presetColors = [
+		'#6231af',
+		'#db2777',
+		'#f59e0b',
+		'#2dd4bf',
+		'#06b6d4',
+		'#10b981',
+	]
+
 	return (
 		<>
 			<Popover className='relative'>
@@ -25,32 +34,33 @@ function ColorPicker() {
 							leaveTo='opacity-0 translate-y-1'
 						>
 							<Popover.Panel className='absolute left-1/2 z-10 mt-2 -translate-x-[90%] transform'>
-								<HexColorPicker
-									className='cursor-pointer'
-									color={color}
-									onChange={updateColor}
-								/>
+								<div className='flex flex-col bg-white rounded-lg'>
+									<HexColorPicker
+										className='cursor-pointer'
+										color={color}
+										onChange={updateColor}
+									/>
+									<div className='flex justify-center gap-2 p-2'>
+										{presetColors.map((presetColor) => (
+											<button
+												onClick={() => {
+													updateColor(presetColor)
+												}}
+												className={'flex rounded-full cursor-pointer'}
+												style={{
+													backgroundColor: presetColor,
+													width: '22px',
+													height: '22px',
+												}}
+											/>
+										))}
+									</div>
+								</div>
 							</Popover.Panel>
 						</Transition>
 					</>
 				)}
 			</Popover>
-			{/* {isOpen && (
-				<div className='absolute' ref={popover}>
-					<HexColorPicker
-						className='cursor-pointer'
-						color={color}
-						onChange={updateColor}
-					/>
-				</div>
-			)} */}
-
-			{/* <HexColorInput
-				color={color}
-				onChange={updateColor}
-				className='align-center'
-			/>
-			 */}
 		</>
 	)
 }
