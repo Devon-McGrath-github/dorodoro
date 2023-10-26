@@ -1,7 +1,6 @@
 import { useState, Fragment } from 'react'
 import ColorPicker from './ColorPicker'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { Cog8ToothIcon } from '@heroicons/react/24/solid'
+import { XMarkIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
 import { Dialog, Transition } from '@headlessui/react'
 
 export default function Sidebar() {
@@ -10,8 +9,8 @@ export default function Sidebar() {
 	return (
 		<>
 			<div onClick={() => setSidebarOpen(true)} tabIndex={0}>
-				<Cog8ToothIcon
-					className='h-7 w-7 cursor-pointer'
+				<Cog6ToothIcon
+					className='h-6 w-6 cursor-pointer'
 					id='sidebar_open_btn'
 				/>
 			</div>
@@ -56,7 +55,7 @@ export default function Sidebar() {
 											className='ml-auto justify-center rounded-full'
 										>
 											<XMarkIcon
-												className='h-10 w-10 cursor-pointer'
+												className='h-6 w-6 cursor-pointer'
 												id='sidebar_close_btn'
 												aria-hidden='true'
 											/>
