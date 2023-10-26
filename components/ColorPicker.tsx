@@ -13,7 +13,7 @@ function ColorPicker() {
 					<>
 						<Popover.Button
 							id='color_picker'
-							className='w-10 h-10 rounded-full border-2 border-solid border-white bg-skin-primary cursor-pointer'
+							className='w-10 h-10 rounded-full border-2 border-solid border-white bg-skin-primary cursor-pointer '
 						></Popover.Button>
 						<Transition
 							as={Fragment}

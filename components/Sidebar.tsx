@@ -1,6 +1,7 @@
 import { useState, Fragment } from 'react'
 import ColorPicker from './ColorPicker'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
+import { Cog8ToothIcon } from '@heroicons/react/24/solid'
 import { Dialog, Transition } from '@headlessui/react'
 
 export default function Sidebar() {
@@ -9,7 +10,10 @@ export default function Sidebar() {
 	return (
 		<>
 			<div onClick={() => setSidebarOpen(true)} tabIndex={0}>
-				<Bars3Icon className='h-10 w-10 cursor-pointer' id='sidebar_open_btn' />
+				<Cog8ToothIcon
+					className='h-7 w-7 cursor-pointer'
+					id='sidebar_open_btn'
+				/>
 			</div>
 
 			<Transition.Root show={sidebarOpen} as={Fragment}>
