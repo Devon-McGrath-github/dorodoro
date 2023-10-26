@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 
 type Handler = (event: any) => void
 
-// Improved version of https://usehooks.com/useOnClickOutside/
 const useClickOutside = (ref: React.RefObject<any>, handler: Handler) => {
 	useEffect(() => {
 		let startedInside = false
@@ -18,7 +17,6 @@ const useClickOutside = (ref: React.RefObject<any>, handler: Handler) => {
 		}
 
 		const validateEventStart = (event: MouseEvent | TouchEvent) => {
-
 			startedWhenMounted = ref.current
 			startedInside = ref.current && ref.current.contains(event.target)
 		}
