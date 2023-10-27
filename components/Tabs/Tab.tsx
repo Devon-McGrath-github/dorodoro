@@ -14,10 +14,11 @@ const Tab = ({ tabName, timerType }: TabProps) => {
 	])
 
 	return (
-		<li className='flex-1' role='tab' tabIndex={0}>
-			<div
+		<li className='flex-1' role='tab'>
+			<button
+				tabIndex={0}
 				className={
-					'h-full align-middle text-center items-stretch text-xs cursor-pointer font-bold uppercase px-3 py-2 rounded bg-skin-primary box-border border border-transparent hover:border hover:border-white hover:bg-opacity-50 focus:ring-gray-200 ' +
+					'h-full w-full align-middle text-center items-stretch text-xs cursor-pointer font-bold uppercase px-3 py-2 rounded bg-skin-primary box-border border border-transparent hover:border hover:border-white hover:bg-opacity-50 focus:ring-gray-200 ' +
 					(timer === timerType ? 'bg-opacity-40' : 'bg-opacity-100')
 				}
 				onClick={(e) => {
@@ -27,7 +28,7 @@ const Tab = ({ tabName, timerType }: TabProps) => {
 				}}
 			>
 				{tabName}
-			</div>
+			</button>
 		</li>
 	)
 }

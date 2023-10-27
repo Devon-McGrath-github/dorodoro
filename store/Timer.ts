@@ -23,7 +23,7 @@ const initialState: State = {
 	duration: 1500,
 	timer: 'default',
 	countingDown: false,
-	color: '#121212',
+	color: '#f59e0b',
 	taskCount: 1,
 }
 

@@ -8,12 +8,12 @@ export default function Sidebar() {
 
 	return (
 		<>
-			<div onClick={() => setSidebarOpen(true)} tabIndex={0}>
+			<button onClick={() => setSidebarOpen(true)} tabIndex={0}>
 				<Cog6ToothIcon
 					className='h-6 w-6 cursor-pointer'
 					id='sidebar_open_btn'
 				/>
-			</div>
+			</button>
 
 			<Transition.Root show={sidebarOpen} as={Fragment}>
 				<Dialog as='div' className='relative z-40' onClose={setSidebarOpen}>
