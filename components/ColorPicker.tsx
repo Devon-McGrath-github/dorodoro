@@ -43,6 +43,7 @@ function ColorPicker() {
 									<div className='flex justify-center gap-2 p-2'>
 										{presetColors.map((presetColor) => (
 											<button
+												key={presetColor}
 												onClick={() => {
 													updateColor(presetColor)
 												}}
