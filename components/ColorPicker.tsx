@@ -20,10 +20,19 @@ function ColorPicker() {
 			<Popover className='relative'>
 				{({ open }) => (
 					<>
-						<Popover.Button
-							id='color_picker'
-							className='w-8 h-8 rounded-full border-2 border-solid border-white bg-skin-primary cursor-pointer '
-						></Popover.Button>
+						<div className='flex gap-2 items-center'>
+							<HexColorInput
+								className='h-8 w-20 appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+								color={color}
+								onChange={updateColor}
+							/>
+
+							<Popover.Button
+								id='color_picker'
+								className='w-8 h-8 rounded-full border-2 border-solid border-white bg-skin-primary cursor-pointer '
+							></Popover.Button>
+						</div>
+
 						<Transition
 							as={Fragment}
 							enter='transition ease-out duration-200'
@@ -33,7 +42,7 @@ function ColorPicker() {
 							leaveFrom='opacity-100 translate-y-0'
 							leaveTo='opacity-0 translate-y-1'
 						>
-							<Popover.Panel className='absolute left-1/2 z-10 mt-2 -translate-x-[90%] transform'>
+							<Popover.Panel className='absolute left-1/2 z-10 mt-2 -translate-x-[70%] transform'>
 								<div className='flex flex-col bg-white rounded-lg'>
 									<HexColorPicker
 										className='cursor-pointer'

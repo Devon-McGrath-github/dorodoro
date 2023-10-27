@@ -66,7 +66,7 @@ export default function Sidebar() {
 												<h1 className='text-2xl font-bold'>Settings:</h1>
 											</div>
 											<div className='flex flex-row items-center justify-between gap-4 w-full'>
-												<h2 className='text-xl font-medium'>Color</h2>
+												<h2 className='text-xl font-medium'>Color:</h2>
 												<ColorPicker />
 											</div>
 										</div>
