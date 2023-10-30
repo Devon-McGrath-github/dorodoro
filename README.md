@@ -1,8 +1,10 @@
 # DoroDoro Timer
 
-Project is a simple Pomodoro Technique Timer, a focus/study technique I use frequently.
+Give it a try: [Dorotimer](https://dorotimer.co/)
 
-I wanted to practice Typescript, learn Next.js, Tailwind, Zustand and learn how to deploy a repo with Netlify. This is what I'm using to achieve those goals.
+The Project is a simple Pomodoro Timer, a focus/study technique I use frequently.
+
+I wanted to practice Typescript, learn Next.js, Tailwind, Zustand and deploy a repo with Netlify.
 
 ## Boilerplate from Next JS
 
