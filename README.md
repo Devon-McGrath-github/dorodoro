@@ -1,7 +1,5 @@
 # DoroDoro Timer
 
-Give it a try: [Dorotimer](https://dorotimer.co/)
-
 The Project is a simple Pomodoro Timer, a focus/study technique I use frequently.
 
 I wanted to practice Typescript, learn Next.js, Tailwind, Zustand and deploy a repo with Netlify.
