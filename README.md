@@ -5,7 +5,9 @@ The Project is a simple Pomodoro Timer, a focus/study technique I use.
 Try it out [Here](https://euphonious-treacle-dd6ab0.netlify.app/)
 Make sure to try changing the color to one you like via the settings cog (top right)!
 
-I wanted to practice Typescript, learn Next.js, Tailwind, Zustand and deploy a repo with Netlify.
+![DoroDoro Thumbnail](public/images/DoroDoro.png)
+
+This was a project to practice Typescript, learn Next.js, Tailwind, Zustand and deploy a repo with Netlify.
 
 ## Boilerplate from Next JS
 
