@@ -1,6 +1,8 @@
 # DoroDoro Timer
 
-The Project is a simple Pomodoro Timer, a focus/study technique I use frequently.
+The Project is a simple Pomodoro Timer, a focus/study technique I use.
+
+Try it out [Here](https://euphonious-treacle-dd6ab0.netlify.app/)
 
 I wanted to practice Typescript, learn Next.js, Tailwind, Zustand and deploy a repo with Netlify.
 
